@@ -38,7 +38,7 @@ public class TrackService {
         return tryMatchResponses(forKeys);
     }
 
-    private synchronized void tryToRequest() {
+    private void tryToRequest() {
         if (requestQueue.hasEnoughElementsToRequest()) {
             request(requestQueue.drainQueue(config.getBulkSize()));
         }

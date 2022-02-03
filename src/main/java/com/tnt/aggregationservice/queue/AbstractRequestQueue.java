@@ -29,7 +29,7 @@ public class AbstractRequestQueue<ResponseType extends Object> {
         requestQueue.addAll(newKeys);
     }
 
-    public synchronized boolean hasEnoughElementsToRequest() {
+    public boolean hasEnoughElementsToRequest() {
         return requestQueue.size() >= config.getBulkSize();
     }
 
