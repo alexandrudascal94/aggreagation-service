@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+client:
+  base-url: http://localhost:8080
+  shipment-url: /shipments
+  track-url: /track
+  pricing-url: /pricing
+  connection-timeout: 5000
+  response-timeout: 3000
+  throttled-timeout: 5000
+  bulk-size: 5

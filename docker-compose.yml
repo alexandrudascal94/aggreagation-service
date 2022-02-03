@@ -1,0 +1,10 @@
+version: "3"
+services:
+  backend-service:
+    hostname: localhost
+    container_name: backend-service-container
+    image: xyzassessment/backend-services
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
