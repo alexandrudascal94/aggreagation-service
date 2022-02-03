@@ -17,48 +17,50 @@ The service will run on default port 8081
 ## Request sample
 
 ```http request
-GET http://localhost:8081/aggregation?pricing=NL,FR,CA,NL,IT&track=109347263,109347261,109347265,109347254,109147261&shipments=109347263,109347261,109347265,109347254,109147261
+GET http://localhost:8081/aggregation?pricing=NL,FR,CA,RU,IT&track=109347263,109347261,109347265,109347254,109147261&shipments=109347263,109347261,109347265,109347254,109147261
+
 ```
 ## Response sample:
 ```http resposne
 {
     "pricing": {
-        "IT": 89.82910788628968,
-        "FR": 31.653950273520792,
-        "CA": 73.34027687659636,
-        "NL": 23.01410302394469
+        "RU": 44.456929691798784,
+        "IT": 7.84373746982453,
+        "FR": 71.6310942152352,
+        "CA": 50.26114196996825,
+        "NL": 68.54581134776295
     },
     "track": {
-        "109347263": "DELIVERING",
-        "109347261": "IN TRANSIT",
-        "109347254": "NEW",
-        "109347265": "NEW",
-        "109147261": "COLLECTED"
+        "109347263": "NEW",
+        "109347261": "DELIVERING",
+        "109347254": "DELIVERED",
+        "109347265": "DELIVERING",
+        "109147261": "COLLECTING"
     },
     "shipments": {
         "109347263": [
             "pallet",
-            "pallet",
-            "pallet"
+            "envelope",
+            "box"
         ],
         "109347261": [
-            "box"
+            "pallet"
         ],
         "109347254": [
             "box",
             "box",
-            "envelope",
+            "pallet",
             "box"
         ],
         "109347265": [
             "box",
-            "pallet",
-            "box",
             "envelope",
-            "pallet"
+            "pallet",
+            "envelope",
+            "box"
         ],
         "109147261": [
-            "pallet"
+            "envelope"
         ]
     }
 }
