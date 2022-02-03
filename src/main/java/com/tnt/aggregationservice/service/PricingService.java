@@ -36,7 +36,7 @@ public class PricingService {
         return tryMatchResponses(forKeys);
     }
 
-    private void tryToRequest() {
+    private synchronized void tryToRequest() {
         if (requestQueue.hasEnoughElementsToRequest()) {
             request(requestQueue.drainQueue(config.getBulkSize()));
         }
